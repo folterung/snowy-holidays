@@ -228,13 +228,6 @@ class Snowflake {
     } else {
       this.#x += wind * 1.25;
     }
-
-  //   const wind =
-  //   noise(snowflake.l, snowflake.y * WIND_CHANGE, frameCount * WIND_CHANGE) -
-  //   0.5;
-  // if (snowflake.x > width + diameter) snowflake.x = -diameter;
-  // else if (snowflake.x < -diameter) snowflake.x = width + diameter;
-  // else snowflake.x += wind * WIND_SPEED * snowflake.l;
   }
 
   update() {
