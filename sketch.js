@@ -218,15 +218,16 @@ class Snowflake {
   }
 
   applyGravity() {
+    const WIND_CHANGE = 1.25;
+    const wind = noise(WIND_CHANGE, this.#y + WIND_CHANGE, frameCount + WIND_CHANGE) - 0.5;
     this.#y += this.#gravity;
-    const wind = noise(1, this.#y + 1.25, frameCount + 1.25) - 0.5;
 
     if (this.#x > width + this.#size) {
       this.#x = -this.#size;
     } else if (this.#x < -this.#size) {
       this.#x = width + this.#size;
     } else {
-      this.#x += wind * 1.25;
+      this.#x += wind * WIND_CHANGE;
     }
   }
 
