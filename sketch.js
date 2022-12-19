@@ -217,7 +217,7 @@ class Snowflake {
     this.#y = -this.#size;
   }
 
-  applyGravity() {
+  applyGravityAndWind() {
     const WIND_CHANGE = 1.25;
     const wind = noise(WIND_CHANGE, this.#y + WIND_CHANGE, frameCount + WIND_CHANGE) - 0.5;
     this.#y += this.#gravity;
@@ -235,7 +235,7 @@ class Snowflake {
     if (this.isPastViewPort()) {
       this.resetSnowflakePosition();
     } else {
-      this.applyGravity();
+      this.applyGravityAndWind();
     }
   }
 }
